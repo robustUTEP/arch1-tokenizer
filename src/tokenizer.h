@@ -23,7 +23,7 @@ char *word_start(char *str);
    str is assumed to be pointing to a non-space character*/
 char *word_end(char *str);
 
-/* Counts the number of space words in the string argument. */
+/* Counts the number of space seperated words in the string argument. */
 int count_words(char *str);
 
 /* Returns a freshly allocated new zero-terminated string
