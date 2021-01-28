@@ -5,8 +5,8 @@ CFLAGS=-g -O3
 all: sortargs
 
 # include file dependencies
-bst.o: bst.h
-sortargs.o: bst.h
+bst.o: bst.h bst.c
+sortargs.o: bst.h sortargs.c
 
 # $@=target, $^=prerequisites
 sortargs: bst.o sortargs.o

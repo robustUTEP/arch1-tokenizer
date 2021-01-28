@@ -13,27 +13,32 @@ the deadline.:
 - A Makefile whose default production builds the project, and whose
 `clean` production eliminates any files created when the project is
 built.
-- A brief README documenting any non-obvious aspects of your program.  For example, you may want to describe how it works, how to run it, and any bugs or idiosyncracies the user ought to know about.
+- A brief README documenting any non-obvious aspects of your program.
+  For example, you may want to describe how it works, how to run it,
+  and any bugs or idiosyncracies the user ought to know about.
 
 ## Learning outcomes
 
 Students who complete this lab will demonstrate ability to
-- Use command-line tools (cp, mv, rm, mkdir, cd, emacs, cc, make, git) in program development under bash
-- Develop and debug C programs that include 
--- Pointer arithmetic 
--- Dynamic mem alllocation & free (malloc/calloc/free) 
--- Multiple source files (and headers with declarations)
--- A pointer-based data structure (linked list of structs)
--- You may refer to the [Grading and Course Learning Outcomes webpage](https://sites.google.com/site/arch1utep/course-learning-outcomes) for an in depth explanation of the grading criteria.
-- Design a comprehensible small program in the C language. 
+- Use command-line tools (cp, mv, rm, mkdir, cd, emacs, cc, make, git)
+for program development under bash
+- Develop and debug C programs that include
+  - Pointer arithmetic
+  - Dynamic memory allocation & free (malloc/calloc/free)
+  - Multiple source files (and headers with declarations)
+  - A pointer-based data structure (linked list of structs)
+- Design a comprehensible small program in the C language.
+- You may refer to the [Grading and Course Learning Outcomes webpage](https://sites.google.com/site/arch1utep/course-learning-outcomes) for an in depth explanation of the grading criteria.
 
-# Grading 
 
-At a technical inteview where your project will be examined and discussed, your mastery of the following will be assessed 
+# Grading
+
+At a technical interview where your project will be examined
+and discussed, your mastery of the following will be assessed
 
 - Proper use of development tools (e.g. bash, emacs, make, compiler,
-  and git) 
-- Clear and concise written communication 
+  and git)
+- Clear and concise written communication
 - Code Hygene: consistent, expressive, and efficient
     - variable, function, and struct names
     - comments
@@ -42,7 +47,7 @@ At a technical inteview where your project will be examined and discussed, your 
       freeing of dynamically allocated memory)
     - consistent and language-appropriate coding style
        - indentation
-       - use of capitalization and whitespace (e.g. `char *word_end(char *p)` 
+       - use of capitalization and whitespace (e.g. `char *word_end(char *p)`
          rather than `char* wordEnd (char* p)`)
     - algorithms and data structures
     - repository content (all necessary files are included, no
@@ -54,7 +59,7 @@ At a technical inteview where your project will be examined and discussed, your 
 ## Overview
 Your objective for the first lab project is to build a tokenizer that
 maintains a history. Tokenizing is the process of dividing a string into
-tokens by some delimeter (e.g. the string librarys split() function).
+tokens by some delimiter (e.g. the string library's split() function).
 Consider tokenizing the string “The cake is a lie!” using the space
 character. This would result in: \[“The”, “cake”, “is”, “a”, “lie!”\].
 
@@ -88,7 +93,7 @@ my fancy interface thing
 ```
 
 ## Working with Strings
-Inside this repository there are two header files, **tokenizer.h** and **history.h**, 
+Inside this repository there are two header files, **tokenizer.h** and **history.h**,
 which declare functions your project will define. You should explore the
 contents of each file so that you are familiar with the instructions to
 follow.
@@ -96,34 +101,32 @@ follow.
 The second milestone of your project is to define several of the
 functions declared and described (but not defined) in tokenizer.h:
 
-1.  `int space_char(char c); // true if c is a tab or space, and not zero`
-2.  `int non_space_char(char c); // true if c not a tab or space, and not zero`
-3.  `char *word_start(char *s); // * to first (non-space) char in first word in s`
-4.  `char *word_terminator(char *word);   // * to char after end of word
-5.  `int count_words(char *s); // the number of words in s`
+1.  `int space_char(char c);      // true if c is a tab or space, and not zero`
+2.  `int non_space_char(char c);  // true if c not a tab or space, and not zero`
+3.  `char *word_start(char *str); // * to first non-space char in first word in s`
+4.  `char *word_end(char *str);   // * to for space char after end of word`
+5.  `int count_words(char *str);  // the number of words in s`
 
 The declarations of these functions in `tokenizer.h` includes a more
 comprehensive description of each function's semantics.  **We strongly
 encourage you to read these descriptions carefully, and to include
 them with your function declarations.**
 
-You should carefully read the declarations of these functions in `Tokenizer.h` t
- also includes a more comprehensive description of each function's semantics.  
-
 Each function definition should appropriately use the arguments and
-return the correct type declared in the method declaration. **Your code should include `tokenizer.h` and not modify the the declarations it contains.** 
+return the correct type declared in the method declaration. **Your code should include `tokenizer.h` and not modify the the declarations it contains.**
 
 Lastly, you are **not allowed to use any libraries except stdio.h and stdlib.h**
-in your source code.
+in your source code. You must implement all string functions yourself
 
 ## Dealing with Memory Allocation
 The third milestone of your project will require you to allocate and
-free memory.  You must define and test the 
+free memory.  You must define and test the
 following functions declared in `tokenizer.h`.
 
-1.  `char *copy_str(char *inStr, short len);`
-2.  `void print_tokens(char**);`
-3.  `void free_tokens(char**);`
+1.  `char *copy_str(char *src, short len); // return len characters from src`
+2.  `void print_tokens(char **toks);       // print the tokens pointed to by toks`
+3.  `char *get_token(char **toks, int id); // return the idth token from toks`
+4.  `void free_tokens(char **toks);        // free all memory associated with toks`
 
 To test your functions, you should hardcode the allocation of an array
 of strings (char\*\*).
@@ -134,10 +137,11 @@ part is to put them together and define the tokenizer:
 
 `char **tokenize(char *s);`
 
-As explained in the Overview, the tokenize method should accept a string
+As explained in the Overview, the tokenize() method should accept a string
 of characters as input and return an array of tokens. It is important to
-understand that you must determine the amount of tokens prior to
-allocating space for the array, and similarly with each token.
+understand that you must determine the number of tokens needed prior to
+allocating space for the array, and similarly the size of each token before
+allocating space for the token.
 
 ## Maintaining History
 The final milestone of the project is to build the history component.
@@ -151,10 +155,10 @@ each node containing:
 Inside the **history.h** header file you will find two struct
 declarations representing this notion.
 
-Overall, a user should be able to: 
+Overall, a user should be able to:
 
-1. view the history of strings entered by the user 
-2. and recall a certain history item by using the command 
+1. view the history of strings entered by the user
+2. and recall a certain history item by using the command
    `!3` (i.e. an exclamation directly followed by the sequence number).
 
 You should define each function from the **history.h** header file in
