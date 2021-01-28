@@ -23,12 +23,13 @@ Students who complete this lab will demonstrate ability to
 - Use command-line tools (cp, mv, rm, mkdir, cd, emacs, cc, make, git)
 for program development under bash
 - Develop and debug C programs that include
--- Pointer arithmetic
--- Dynamic memory allocation & free (malloc/calloc/free)
--- Multiple source files (and headers with declarations)
--- A pointer-based data structure (linked list of structs)
--- You may refer to the [Grading and Course Learning Outcomes webpage](https://sites.google.com/site/arch1utep/course-learning-outcomes) for an in depth explanation of the grading criteria.
+  - Pointer arithmetic
+  - Dynamic memory allocation & free (malloc/calloc/free)
+  - Multiple source files (and headers with declarations)
+  - A pointer-based data structure (linked list of structs)
 - Design a comprehensible small program in the C language.
+- You may refer to the [Grading and Course Learning Outcomes webpage](https://sites.google.com/site/arch1utep/course-learning-outcomes) for an in depth explanation of the grading criteria.
+
 
 # Grading
 
