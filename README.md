@@ -3,7 +3,7 @@ Lab Project 1: Building a Tokenizer
 A related demo program is in directory "sortArgDemo".  All encouraged
 to thorougly understand it before attempting this project.
 
-All work should be your own work. Please see the [Course Website](https://sites.google.com/site/arch1utep/home#TOC-Academic-Honesty) for full details on the course's policy on academic honesty.
+All work should be your own work. Please see the course website and syllabus for full details on the course's policy on academic honesty.
 
 Prototype source code for this project is in a  directory named `src`.
 You should add and modify source code within that directory, and those
@@ -28,7 +28,8 @@ for program development under bash
   - Multiple source files (and headers with declarations)
   - A pointer-based data structure (linked list of structs)
 - Design a comprehensible small program in the C language.
-- You may refer to the [Grading and Course Learning Outcomes webpage](https://sites.google.com/site/arch1utep/course-learning-outcomes) for an in depth explanation of the grading criteria.
+- You may refer to the syllabus, course info, and assignment 
+for an in depth explanation of the grading criteria and expectations.
 
 
 # Grading
