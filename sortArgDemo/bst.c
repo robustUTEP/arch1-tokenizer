@@ -3,38 +3,46 @@
 
 BstNode *root = 0;
 
-int bstStrcmp(char *a, char *b) /* return pos if string a > string b, 0 if equal, neg otherwise */
+/* String comparison function
+   Returns 0 if strings are the same, >0 if string A comes first
+   and < 0 if string B comes first
+*/
+int bstStrcmp(char *str_ptr_a, char *str_ptr_b)
 {
-  while (*a && *b) {		/* until end of string */
-    int diff = *a++ - *b++;
-    if (diff) return diff;	/* differed within string */
+  while (*str_ptr_a && *str_ptr_b) {		/* until end of string */
+    int diff = *(str_ptr_a++) - *(str_ptr_b++);
+    if (diff)
+      return diff;	/* Return the difference within string */
   }
-  if (!*a && !*b) return 0;	/* strings are same length & content */
-  return (*a) ? 1 : -1;		/* a > b if a is longer */
+  if (!*str_ptr_a && !*str_ptr_b) return 0;	/* strings are same length & content */
+  return (*str_ptr_a) ? 1 : -1;		/* a > b if a is longer */
 }
 
-int bstStrlen(char *s)
+/* Returns the length of a string */
+int bstStrlen(char *str_ptr)
 {
-  char *sc = s;
-  while (*sc++)
-  return sc - s;
+  char *str_end_ptr = str_ptr;
+  while (*str_end_ptr++)
+  return str_end_ptr - str_ptr;
 }
 
-
-
-void
-bstInsert(BstNode **rootp, char *str) 
+/* Inserts a node into the BST */
+void bstInsert(BstNode **rootp, char *str)
 {
   if (*rootp == 0) {		/* insert here */
     BstNode *newNode = malloc(sizeof(BstNode));
+    /* init children to be empty */
     for (int i = 0; i < 2; i++) newNode->children[i] = 0;
+
     /* copy first zero-terminated  string from inbuf */
     int len = bstStrlen(str), sindex = 0;
-    char *scopy = malloc((len + 1) * sizeof(char)), c;
-    do {	
-      c = *(scopy+sindex) = *(str+sindex);
+    char *scopy = malloc((len + 1) * sizeof(char)), curr_char;
+    while ( *(str+sindex) != 0 ) {
+      *(scopy+sindex) = *(str+sindex);
       sindex++;
-    } while (c);
+    }
+    *(scopy+sindex) = '\0';
+
     newNode->str = scopy;
     *rootp = newNode;
   } else {
@@ -46,9 +54,9 @@ bstInsert(BstNode **rootp, char *str)
 void
 bstPrint(BstNode *root)		/* in order */
 {
-  if (root == 0) return;
+  if (root == NULL) return;
   bstPrint(root->children[0]);
-  puts(root->str); 
+  puts(root->str);
   bstPrint(root->children[1]);
 }
 

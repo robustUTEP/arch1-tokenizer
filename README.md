@@ -1,14 +1,14 @@
 Lab Project 1: Building a Tokenizer
 ===================================
-A related demo program is in directory "sortArgDemo".  All encouraged
-to thorougly understand it before attempting this project.
+A related demo program is in directory "sortArgDemo". You are
+encouraged to thoroughly understand it before attempting this project.
 
 All work should be your own work. Please see the course website and syllabus for full details on the course's policy on academic honesty.
 
-Prototype source code for this project is in a  directory named `src`.
+Prototype source code for this project is in a directory named `src`.
 You should add and modify source code within that directory, and those
 changes should be pushed to your private Github repository prior to
-the deadline.:  
+the deadline. Your project should contain:  
 - All .c and .h source files
 - A Makefile whose default production builds the project, and whose
 `clean` production eliminates any files created when the project is
@@ -18,7 +18,6 @@ built.
   and any bugs or idiosyncracies the user ought to know about.
 
 ## Learning outcomes
-
 Students who complete this lab will demonstrate ability to
 - Use command-line tools (cp, mv, rm, mkdir, cd, emacs, cc, make, git)
 for program development under bash
@@ -28,22 +27,20 @@ for program development under bash
   - Multiple source files (and headers with declarations)
   - A pointer-based data structure (linked list of structs)
 - Design a comprehensible small program in the C language.
-- You may refer to the syllabus, course info, and assignment 
+- You may refer to the syllabus, course info, lectures, and assignment
 for an in depth explanation of the grading criteria and expectations.
 
-
 # Grading
-
 At a technical interview where your project will be examined
 and discussed, your mastery of the following will be assessed
 
 - Proper use of development tools (e.g. bash, emacs, make, compiler,
   and git)
 - Clear and concise written communication
-- Code Hygene: consistent, expressive, and efficient
+- Code Hygiene: consistent, expressive, and efficient
     - variable, function, and struct names
     - comments
-    - modularization (into fuctions and files) including header files
+    - modularization (into functions and files) including header files
     - storage management (variable scope & lifetime, allocation and
       freeing of dynamically allocated memory)
     - consistent and language-appropriate coding style
@@ -106,7 +103,7 @@ functions declared and described (but not defined) in tokenizer.h:
 2.  `int non_space_char(char c);  // true if c not a tab or space, and not zero`
 3.  `char *word_start(char *str); // * to first non-space char in first word in s`
 4.  `char *word_end(char *str);   // * to for space char after end of word`
-5.  `int count_words(char *str);  // the number of words in s`
+5.  `int count_words(char *str);  // the number of words in the string`
 
 The declarations of these functions in `tokenizer.h` includes a more
 comprehensive description of each function's semantics.  **We strongly

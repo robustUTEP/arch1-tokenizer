@@ -26,11 +26,11 @@ char *word_end(char *str);
 /* Counts the number of space seperated words in the string argument. */
 int count_words(char *str);
 
-/* Returns a freshly allocated new zero-terminated string
+/* Returns a newly allocated zero-terminated string
    containing <len> chars from <inStr> */
 char *copy_str(char *inStr, short len);
 
-/* Returns a freshly allocated zero-terminated vector of freshly allocated
+/* Returns a newly allocated zero-terminated vector of freshly allocated
    space-separated tokens from zero-terminated str.
 
    For example, tokenize("hello world string") would result in:
@@ -43,6 +43,18 @@ char **tokenize(char* str);
 
 /* Prints all tokens. */
 void print_tokens(char **tokens);
+
+/* Returns a point to the id'th token in the array.
+   For exmple if toks contained:
+     tokens[0] = "hello"
+     tokens[1] = "world"
+     tokens[2] = "string"
+     tokens[3] = 0
+
+  And get_token(tokens, 2) is called a pointer to
+  "string" is returned.
+*/
+char *get_token(char **tokens, int id);
 
 /* Frees all tokens and the vector containing them. */
 void free_tokens(char **tokens);
