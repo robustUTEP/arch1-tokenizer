@@ -15,6 +15,6 @@ has
 my
 ```
  SortArgDemo contains the following files:
- * sortargs.c - The main interface that reads the arguments
+ * sortargs.c - The main program driver that reads the arguments
  * bst.h - The header that contains the interface info for the BST
  * bst.c - The implementation of the binary search tree
