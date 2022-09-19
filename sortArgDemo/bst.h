@@ -1,7 +1,7 @@
 #include "stdio.h"
 
-typedef struct BNode_s {
-  struct BNode_s *children[2];
+typedef struct BstNode_s {
+  struct BstNode_s *children[2];
   char *str;
 } BstNode;
 
