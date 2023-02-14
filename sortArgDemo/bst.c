@@ -1,4 +1,4 @@
-#include "malloc.h"
+#include "stdlib.h"
 #include "bst.h"
 
 BstNode *root = 0;
@@ -17,6 +17,7 @@ int bstStrlen(char *s)
 {
   char *sc = s;
   while (*sc++)
+    ;
   return sc - s;
 }
 
@@ -32,14 +33,14 @@ bstInsert(BstNode **rootp, char *str)
     int len = bstStrlen(str), sindex = 0;
     char *scopy = malloc((len + 1) * sizeof(char)), c;
     do {	
-      c = *(scopy+sindex) = *(str+sindex);
+      c = *(scopy+sindex) = *(str+sindex); /* c = scopy[sindex] = str[sindex] */
       sindex++;
     } while (c);
     newNode->str = scopy;
     *rootp = newNode;
   } else {
     int diff = bstStrcmp(str, (*rootp)->str);
-    bstInsert(&((*rootp)->children[diff > 0 ? 1 : 0]), str);
+    bstInsert(&((*rootp)->children[(diff > 0) ? 1 : 0]), str);
   }
 }
 
