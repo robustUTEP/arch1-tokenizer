@@ -27,7 +27,7 @@ Students who complete this lab will demonstrate ability to
 -- You may refer to the [Grading and Course Learning Outcomes webpage](https://sites.google.com/site/arch1utep/course-learning-outcomes) for an in depth explanation of the grading criteria.
 - Design a comprehensible small program in the C language. 
 
-# Grading 
+# Grading / Learning Outcomes
 
 At a technical inteview where your project will be examined and discussed, your mastery of the following will be assessed 
 
@@ -48,7 +48,8 @@ At a technical inteview where your project will be examined and discussed, your 
     - repository content (all necessary files are included, no
       unnecessary files such as `#tokenizer.h#` and `tokenizer.o`)
     - repository log messages (we encourage you to examine ours)
-- Correctness
+- pointers and pointer arithmetic (arrays, linked data structures)
+- dynamic memory allocation
 - Timely completion
 
 ## Overview
