@@ -42,8 +42,8 @@ At a technical inteview where your project will be examined and discussed, your 
       freeing of dynamically allocated memory)
     - consistent and language-appropriate coding style
        - indentation
-       - use of capitalization and whitespace (e.g. `char *word_end(char *p)` 
-         rather than `char* wordEnd (char* p)`)
+       - use of capitalization and whitespace.  For example, `char *word_end(char *p)` or char `*wordEnd(char *p)` 
+         rather than `char* WordEnd (char* p)`.
     - algorithms and data structures
     - repository content (all necessary files are included, no
       unnecessary files such as `#tokenizer.h#` and `tokenizer.o`)
